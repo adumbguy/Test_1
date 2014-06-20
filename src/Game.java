@@ -1,34 +1,43 @@
-import java.util.ArrayList;
-import java.util.Scanner;
-
 
 /**
  * Created by eddie on 6/10/2014.
  */
 public class Game {
-    public static ArrayList<Animal> animalList = new ArrayList<Animal>();
-    public static ArrayList<Animal> fightList = new ArrayList<Animal>();
+
+
 
     public static void go() {
 
+        System.out.println("___Start up___");
 
-        Dog dog = new Dog();
-        animalList.add(dog);
-
-        Scanner scan = new Scanner(System.in);
-        System.out.println("Type the name of the animal you want: ");
-        String s = scan.next();
+        System.out.println("Welcome to Charles Darwin's Mertle Cumbut!");
+        System.out.println("Where you pit poor, undeserving animals against each other for your amusement.");
+        System.out.println("");
+        while (true) {
 
 
-        if(MenuOptions.checkInputValidity(s)){
-            MenuOptions.menuPicker(s);
+            System.out.println("Type the name of the animal you want: ");
+            String s = Input.scan().next();
+
+
+            if (MenuOptions.checkInputValidity(s)) {
+
+                if (s.equalsIgnoreCase("quit")) {
+                    break;
+
+                }else{
+                    MenuOptions.menuPicker(s);
+                }
+            }
+
         }
+
+
+        //String s2 = scan().next();
 
 
         System.out.println("_______End Beep_______");
     }
-   // public static void battlePhase(){
-
-    //}
 }
+
 
